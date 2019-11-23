@@ -27,7 +27,7 @@ app.post('/login', (req, res) => {
         user_id: "riturajman",
         passwd: "1234"
     }
-    jwt.sign({ user }, 'itsasecret', (err, token) => {
+    jwt.sign({ user }, 'itsasecret', {expiresIn: "20s"}, (err, token) => {
         if (err) {
             res.send(err)
         }
